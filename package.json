@@ -2,5 +2,23 @@
   "name": "glad-online-v1",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "webpack": "^3.8.1"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "build": "webpack",
+    "build:prod": "webpack --config webpack.production.js",
+    "watch": "webpack -w",
+    "start": "NODE_ENV=production nodemon server.js",
+    "start:prod": "NODE_ENV=production pm2 start server.js --name hokage-game",
+    "restart:prod": "NODE_ENV=production pm2 restart server.js"
+  }
 }
