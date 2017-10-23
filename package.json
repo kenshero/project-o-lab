@@ -12,13 +12,17 @@
     "extract-text-webpack-plugin": "^3.0.1",
     "webpack": "^3.8.1"
   },
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  },
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon server/app.js",
     "build": "webpack",
     "build:prod": "webpack --config webpack.production.js",
     "watch": "webpack -w",
-    "start": "NODE_ENV=production nodemon server.js",
-    "start:prod": "NODE_ENV=production pm2 start server.js --name hokage-game",
-    "restart:prod": "NODE_ENV=production pm2 restart server.js"
+    "start": "NODE_ENV=production nodemon server/app.js",
+    "start:prod": "NODE_ENV=production pm2 start server/app.js --name hokage-game",
+    "restart:prod": "NODE_ENV=production pm2 restart server/app.js"
   }
 }
